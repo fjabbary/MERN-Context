@@ -1,0 +1,57 @@
+======================================|| Video #2 ||==============================================
+<!-- create backend folder > server.js
+create package.json in the backend
+install express and intial setup
+- nodemon and cors, mongoose
+- script => "dev": "nodemon server.js", "start": "node server.js"
+- Test root route (GET Request)
+
+install dotenv package
+create .env file (PORT=4000)
+
+server.js => require('dotenv').config();
+replace PORT => process.env.PORT;
+
+app.use((req, res, next) => {
+console.log(req.path, req.method);
+next();
+}) -->
+
+======================================|| Video #3 ||==============================================
+
+<!-- create folder routes ==> workouts.js and create routes
+export router;
+
+import the routes and use them in server.js 
+
+routes to be created:
+
+app.get('/') all workouts 
+app.get('/:id') single workout -->
+<!-- app.post('/') Post a new workout -->
+<!-- app.delete - Delete a post -->
+<!-- app.patch('/:id') update a route
+
+Test them with postman and save them to the postman -->
+
+=====================================|| Video #4 ||============================================
+<!-- Add mongo DB and install mongoose
+add uRI inside .env -->
+
+=====================================|| Video #5 ||============================================
+<!-- create models > workoutModel.js
+createSchema => title, reps(number), load (number) and all required
+pass {timestamps: true} as a second argument to the Schema
+Make model('workout', WorkoutSchema) -->
+
+<!-- Test the post request to add a new data:
+workout.create({}) -->
+=====================================|| Video #6 ||=========================================
+<!-- create contollers/workoutController.js
+move callback funtions to controller and export/import them
+move other dependencies as well
+
+complete get function => await Workoput.find({}).sort({createdAt: -1}) -->
+<!-- get Single workout => findById -->
+
+<!-- in controller, import mongoose and check if (!mongoose.Types.ObjectId.isValid(id)) -->
