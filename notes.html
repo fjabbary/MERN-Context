@@ -34,11 +34,11 @@ app.get('/:id') single workout -->
 
 Test them with postman and save them to the postman -->
 
-=====================================|| Video #4 ||============================================
+<!-- =====================================|| Video #4 ||============================================ -->
 <!-- Add mongo DB and install mongoose
 add uRI inside .env -->
 
-=====================================|| Video #5 ||============================================
+<!-- =====================================|| Video #5 ||============================================ -->
 <!-- create models > workoutModel.js
 createSchema => title, reps(number), load (number) and all required
 pass {timestamps: true} as a second argument to the Schema
@@ -46,7 +46,7 @@ Make model('workout', WorkoutSchema) -->
 
 <!-- Test the post request to add a new data:
 workout.create({}) -->
-=====================================|| Video #6 ||=========================================
+<!-- =====================================|| Video #6 ||========================================= -->
 <!-- create contollers/workoutController.js
 move callback funtions to controller and export/import them
 move other dependencies as well
@@ -55,3 +55,37 @@ complete get function => await Workoput.find({}).sort({createdAt: -1}) -->
 <!-- get Single workout => findById -->
 
 <!-- in controller, import mongoose and check if (!mongoose.Types.ObjectId.isValid(id)) -->
+
+<!-- =====================================|| Video #7 ||========================================= -->
+<!-- Finish controller and all functionalities -->
+
+
+
+<!-- =========================================================================================================
+=========================================================================================================
+=====================================|| Video #8 - Front End ||==========================================
+=========================================================================================================
+========================================================================================================= -->
+
+<!-- create frontend folder and create-react-app and cleanup -->
+<!-- install react-router-dom\ -->
+<!-- create pages and components folders -->
+<!-- in pges => create home component for root route
+inside compotnes => Create Navbar component\
+copy and past css fromindex.css -->
+
+
+=====================================|| Video #9 ||=========================================
+<!-- in home.js make get request to get all workouts -->
+<!-- loop through them and show in DOM -->
+<!-- install cors / or add "proxy" to fronend package.json file "proxy": "http://localhost:4000" ----> Also remove the
+<!-- localhost:4000 expilictly from axios requests 
+since pagakec.json modified, resrart frontend serve
+
+create workoutDetails Component and return tha for each loop instead -->
+
+=====================================|| Video #10 ||=========================================
+<!-- create component WorkoutForm.js
+create form and send data to server -->
+
+=====================================|| Video #11 ||=========================================

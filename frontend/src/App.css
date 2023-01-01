@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+  --primary: #029a07;
+  --secondary: #e63d3d;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+header {
+  height: 10vh;
+  background-color: rgb(204, 236, 73);
+  box-shadow: 3px 3px 3px #aaa;
+  padding: 0 80px;
+  position: relative;
+  z-index: 10;  
+}
+
+header h1 {
+  margin: 0;
+}
+
+header a {
+  color: #000;
+  text-decoration: none;;
+}
+
+header nav {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.home {
+  height: 100%;
+  background-color: rgb(220, 221, 224);
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+.home {
+  padding: 20px 80px;
+}
+
+.workout-card {
+  padding: 20px;
+  margin-right: 40px;
+  background-color:#fff;
+  margin-bottom: 20px;
+  border-radius:5px;
+  box-shadow: 2px 2px 2px #ccc;
+}
+
+.workout-card h2 {
+  color: var(--primary);
+  margin: 0;
+}
+
+.add-workout {
+  margin-left: 40px;
+}
+
+.add-workout button.submit {
+  padding: 10px 20px;
+  background-color: var(--primary);
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-workout button.submit:hover {
+  background-color: #017205;
+}
+
+.add-workout h3 {
+  margin-top: 0;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form-group input {
+  width: 100%;
+  border: 1px solid #ccc;
+  height: 30px;
+  padding-left: 10px;
+}
