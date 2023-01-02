@@ -57,6 +57,20 @@ header nav {
 .workout-card h2 {
   color: var(--primary);
   margin: 0;
+  display: flex;
+  justify-content:space-between;
+}
+
+.btn-del {
+  background-color: var(--secondary);
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+}
+
+.btn-del:hover {
+  background-color: #a80707;
+  cursor: pointer;
 }
 
 .add-workout {
@@ -94,4 +108,8 @@ header nav {
   border: 1px solid #ccc;
   height: 30px;
   padding-left: 10px;
+}
+
+.error-message {
+  color: red;
 }

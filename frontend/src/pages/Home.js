@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, createContext } from 'react';
 import Axios from 'axios';
 import WorkoutDetails from '../components/WorkoutDetails';
 import WorkoutForm from '../components/WorkoutForm';
 
-function Home() {
+export const HomeContext = createContext(null)
 
+function Home() {
     const [workouts, setWorkouts] = useState([]);
 
     useEffect(() => {
@@ -17,14 +18,16 @@ function Home() {
 
 
     return (
-        <div className="home">
-            <div className="workouts">
-                {workouts.map(workout => <WorkoutDetails key={workout._id} workout={workout} />)}
+        <HomeContext.Provider value={{ workouts, setWorkouts }}>
+            <div className="home">
+                <div className="workouts">
+                    {workouts.map(workout => <WorkoutDetails key={workout._id} workout={workout} />)}
+                </div>
+                <div className="add-workout">
+                    <WorkoutForm />
+                </div>
             </div>
-            <div className="add-workout">
-                <WorkoutForm />
-            </div>
-        </div>
+        </HomeContext.Provider>
     )
 }
 

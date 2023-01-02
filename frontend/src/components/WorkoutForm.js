@@ -1,21 +1,40 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Axios from 'axios'
+// import { v4 as uuidv4 } from 'uuid';
+import { HomeContext } from '../pages/Home';
 
 function WorkoutForm() {
+    const { workouts, setWorkouts } = useContext(HomeContext);
+
+    const mongoObjectId = function () {
+        var timestamp = (new Date().getTime() / 1000 | 0).toString(16);
+        return timestamp + 'xxxxxxxxxxxxxxxx'.replace(/[x]/g, function () {
+            return (Math.random() * 16 | 0).toString(16);
+        }).toLowerCase();
+    };
 
     const [title, setTitle] = useState("")
     const [load, setLoad] = useState("")
-    const [reps, setReps] = useState("")
+    const [reps, setReps] = useState("");
+    const [errMsg, setErrMsg] = useState("")
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const newWorkout = { title, load, reps };
-        await Axios.post('/api/workout/', newWorkout);
+        const newWorkout = { _id: mongoObjectId(), title, load, reps };
 
-        setTitle("")
-        setLoad("")
-        setReps("")
+        if (title && load && reps) {
+            await Axios.post('/api/workout/', newWorkout);
+            setWorkouts([newWorkout, ...workouts]);
+
+            setTitle("")
+            setLoad("")
+            setReps("")
+            setErrMsg("")
+        } else {
+            setErrMsg('All fields are required')
+        }
     }
+
 
     return (
         <div>
@@ -33,6 +52,7 @@ function WorkoutForm() {
                     <label>Reps:</label>
                     <input type="text" onChange={e => setReps(e.target.value)} value={reps} />
                 </div>
+                <p className="error-message"><small>{errMsg}</small></p>
                 <button className="submit" type="submit">Add Workout</button>
             </form>
         </div>
